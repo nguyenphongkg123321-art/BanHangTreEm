@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Khám phá thời trang trẻ em Thỏ Nhỏ Kids. Lựa chọn quần áo mềm mại, nhiều màu sắc cho bé gái và bé trai.">
+  <title>Tất cả sản phẩm | Thỏ Nhỏ Kids</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/catalog.css">
+  <script defer src="js/data.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/cart.js"></script>
+  <script defer src="js/products.js"></script>
+</head>
+<body data-page="products">
+  <div id="site-header"></div>
+  <main id="catalog-main" class="catalog-main container">
+    <nav class="breadcrumb" aria-label="Đường dẫn"><a href="index.html">Trang chủ</a><span>/</span><span id="catalog-breadcrumb">Tất cả sản phẩm</span></nav>
+    <section class="catalog-banner" aria-labelledby="catalog-title">
+      <div class="catalog-banner-copy"><span class="eyebrow">THỎ NHỎ KIDS · MADE FOR LITTLE JOYS</span><h1 id="catalog-title">Một tủ đồ, ngàn niềm vui.</h1><p id="catalog-description">Mềm mại để thoải mái. Xinh xắn để tự tin. Cùng bé lớn khôn mỗi ngày.</p></div>
+      <img id="catalog-banner-image" src="assets/images/girl-banner.jpg" alt="Thời trang trẻ em Thỏ Nhỏ Kids" fetchpriority="high">
+    </section>
+    <div id="catalog-category-pills" class="catalog-category-pills" aria-label="Danh mục nhanh"></div>
+    <div class="catalog-layout">
+      <button class="catalog-filter-shade" id="catalog-filter-shade" type="button" aria-label="Đóng bộ lọc" hidden></button>
+      <aside class="catalog-filters" id="catalog-filters" aria-label="Lọc sản phẩm">
+        <div class="filter-title"><h2>Bộ lọc</h2><button id="catalog-filter-close" type="button" class="icon-btn filter-close" aria-label="Đóng bộ lọc">✕</button></div>
+        <form id="catalog-filter-form">
+          <details open class="filter-group"><summary>Loại sản phẩm</summary><div id="filter-categories" class="filter-options"></div></details>
+          <details open class="filter-group"><summary>Khoảng giá</summary><div class="filter-options">
+            <label><input type="radio" name="price" value="all" checked> Tất cả mức giá</label>
+            <label><input type="radio" name="price" value="0-150000"> Dưới 150.000đ</label>
+            <label><input type="radio" name="price" value="150000-250000"> 150.000đ – 250.000đ</label>
+            <label><input type="radio" name="price" value="250000-400000"> 250.000đ – 400.000đ</label>
+            <label><input type="radio" name="price" value="400000-999999999"> Từ 400.000đ</label>
+          </div></details>
+          <details open class="filter-group"><summary>Kích thước</summary><div id="filter-sizes" class="filter-size-grid"></div></details>
+          <details open class="filter-group"><summary>Màu sắc</summary><div id="filter-colors" class="filter-color-list"></div></details>
+          <details class="filter-group"><summary>Dành cho bé</summary><div class="filter-options"><label><input type="radio" name="gender" value="all" checked> Tất cả</label><label><input type="radio" name="gender" value="girl"> Bé gái</label><label><input type="radio" name="gender" value="boy"> Bé trai</label></div></details>
+          <button class="filter-clear" id="filter-clear" type="button">Xóa tất cả bộ lọc</button>
+        </form>
+        <div class="filter-help"><span class="filter-help-icon">♡</span><strong>Chọn đồ cho bé, thật dễ!</strong><p>Chất liệu dễ chịu, kiểu dáng dễ thương. Nhà Thỏ luôn sẵn lòng giúp bạn.</p><button type="button" class="text-link" id="catalog-size-help">Xem hướng dẫn chọn size</button></div>
+      </aside>
+      <section class="catalog-results" aria-label="Danh sách sản phẩm">
+        <div class="catalog-toolbar"><p id="catalog-count" role="status" aria-live="polite">Đang tải sản phẩm…</p><div class="catalog-toolbar-actions"><button type="button" class="filter-toggle btn btn-outline" id="catalog-filter-open">Bộ lọc</button><label class="sort-label"><span>Sắp xếp:</span><select id="catalog-sort" aria-label="Sắp xếp sản phẩm"><option value="featured">Nổi bật</option><option value="newest">Mới nhất</option><option value="price-asc">Giá: thấp đến cao</option><option value="price-desc">Giá: cao đến thấp</option></select></label></div></div>
+        <div id="catalog-active-filters" class="active-filters"></div>
+        <div class="product-grid catalog-product-grid" id="catalog-grid" aria-live="polite"></div>
+        <div id="catalog-empty" class="catalog-empty" hidden><div class="empty-illustration" aria-hidden="true">⌕</div><h2>Chưa tìm thấy món đồ phù hợp</h2><p>Thử một từ khóa khác hoặc giảm bớt bộ lọc nhé.</p><button type="button" class="btn btn-primary" id="catalog-reset">Xem tất cả sản phẩm</button></div>
+        <div class="catalog-load-more"><p id="catalog-progress"></p><button id="catalog-load-more" class="btn btn-outline" type="button">Xem thêm sản phẩm</button></div>
+      </section>
+    </div>
+    <noscript><p class="catalog-empty">Bạn cần bật JavaScript để tìm kiếm và lọc sản phẩm.</p></noscript>
+  </main>
+  <div id="site-footer"></div>
+</body>
+</html>

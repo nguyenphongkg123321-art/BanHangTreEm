@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Hoàn tất đơn hàng mô phỏng tại Thỏ Nhỏ Kids. Quần áo xinh, tuổi thơ vui.">
+  <title>Thanh toán | Thỏ Nhỏ Kids</title>
+  <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/responsive.css"><link rel="stylesheet" href="css/commerce.css">
+  <script defer src="js/data.js"></script><script defer src="js/main.js"></script><script defer src="js/cart.js"></script><script defer src="js/checkout.js"></script>
+</head>
+<body data-page="checkout">
+  <div id="site-header"></div>
+  <main class="container commerce-page" id="main-content">
+    <nav class="breadcrumb" aria-label="Đường dẫn"><a href="index.html">Trang chủ</a><span>/</span><a href="cart.html">Giỏ hàng</a><span>/</span><span>Thanh toán</span></nav>
+    <div class="commerce-heading"><p class="eyebrow">THÊM MỘT CHÚT XINH CHO BÉ</p><h1>Hoàn tất đơn hàng</h1><p>Chỉ còn một bước để những điều nhỏ xinh đến với bé.</p></div>
+    <div class="demo-notice" role="note"><strong>Trải nghiệm mua sắm mô phỏng.</strong> Không phát sinh giao dịch hay giao hàng thực tế. Hãy sử dụng thông tin mẫu; dữ liệu đơn chỉ được lưu trên trình duyệt này.</div>
+    <div id="checkout-content" class="checkout-layout">
+      <form id="checkout-form" class="checkout-form" novalidate>
+        <section class="commerce-panel"><div class="panel-heading"><span class="step-badge">1</span><h2>Thông tin nhận hàng</h2></div><p class="checkout-signin">Đã có tài khoản mẫu? <a href="login.html?next=checkout.html">Đăng nhập</a></p>
+          <div class="form-grid">
+            <div class="form-field"><label for="customer-name">Họ và tên <span>*</span></label><input id="customer-name" name="name" autocomplete="name" placeholder="Nguyễn Minh Anh" maxlength="80" required><small class="field-error" id="error-name"></small></div>
+            <div class="form-field"><label for="customer-phone">Số điện thoại <span>*</span></label><input id="customer-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="0901 234 567" maxlength="20" required><small class="field-error" id="error-phone"></small></div>
+            <div class="form-field full"><label for="customer-email">Email <span>*</span></label><input id="customer-email" name="email" type="email" autocomplete="email" placeholder="mevabe@example.com" maxlength="120" required><small class="field-error" id="error-email"></small></div>
+            <div class="form-field"><label for="customer-province">Tỉnh / thành phố <span>*</span></label><select id="customer-province" name="province" required><option value="">Chọn tỉnh / thành phố</option>TP. Hồ Chí Minh</option><option>Hà Nội</option><option>Đà Nẵng</option><option>Hải Phòng</option><option>Cần Thơ</option><option>Tỉnh / thành khác</option></select><small class="field-error" id="error-province"></small></div>
+            <div class="form-field"><label for="customer-district">Khu vực / quận / huyện <span>*</span></label><input id="customer-district" name="district" placeholder="Khu vực nhận hàng (mẫu)" maxlength="100" required><small class="field-error" id="error-district"></small></div>
+            <div class="form-field full"><label for="customer-address">Địa chỉ chi tiết <span>*</span></label><input id="customer-address" name="address" autocomplete="street-address" placeholder="Ví dụ: 12 Đường Hoa, Phường Mẫu" maxlength="200" required><small class="field-error" id="error-address"></small></div>
+            <div class="form-field full"><label for="customer-note">Lời nhắn cho nhà Thỏ <span class="optional">(không bắt buộc)</span></label><textarea id="customer-note" name="note" rows="3" placeholder="Điều bạn muốn nhắn gửi..." maxlength="500"></textarea></div>
+          </div>
+        </section>
+        <section class="commerce-panel"><div class="panel-heading"><span class="step-badge">2</span><h2>Phương thức thanh toán</h2></div>
+          <label class="payment-option selected"><input type="radio" name="payment" value="cod" checked><span class="payment-symbol" aria-hidden="true">₫</span><span><strong>Thanh toán khi nhận hàng (COD)</strong><small>Đặt hàng mẫu, chưa thanh toán và không giao hàng thực tế.</small></span></label>
+          <label class="payment-option"><input type="radio" name="payment" value="transfer"><span class="payment-symbol" aria-hidden="true">▤</span><span><strong>Chuyển khoản ngân hàng mô phỏng</strong><small>Đơn sẽ chờ thanh toán. Không chuyển tiền thật.</small></span></label>
+          <div id="transfer-info" class="transfer-info" hidden><strong>Thông tin chuyển khoản mẫu</strong><p>Ngân hàng: THỎ NHỎ DEMO<br>Số tài khoản: DEMO-000-000<br>Chủ tài khoản: THỎ NHỎ KIDS (MÔ PHỎNG)</p><p>Đây là thông tin minh họa, không phải tài khoản ngân hàng có thể nhận tiền.</p></div>
+        </section>
+        <p id="checkout-error" class="form-alert" role="alert" hidden></p>
+      </form>
+      <aside class="checkout-summary commerce-panel" aria-label="Tóm tắt đơn hàng"><div class="panel-heading"><h2>Đơn hàng của bạn</h2><a href="cart.html">Chỉnh sửa</a></div><div id="checkout-items"></div><div id="checkout-coupon"></div><div id="checkout-totals"></div><button class="btn btn-primary checkout-submit" type="submit" form="checkout-form" id="place-order">XÁC NHẬN ĐẶT HÀNG MẪU</button><p class="secure-note">Thông tin mẫu được lưu cục bộ trên thiết bị của bạn.</p><a class="checkout-back" href="cart.html">Quay lại giỏ hàng</a></aside>
+    </div>
+  </main><div id="site-footer"></div>
+</body></html>
